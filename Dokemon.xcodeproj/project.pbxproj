@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6BD87CCE267F02CB00414AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD87CCD267F02CB00414AAB /* AppDelegate.swift */; };
 		6BD87CD0267F02CB00414AAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD87CCF267F02CB00414AAB /* SceneDelegate.swift */; };
-		6BD87CD2267F02CB00414AAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD87CD1267F02CB00414AAB /* ViewController.swift */; };
-		6BD87CD5267F02CB00414AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BD87CD3267F02CB00414AAB /* Main.storyboard */; };
+		6BD87CD2267F02CB00414AAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD87CD1267F02CB00414AAB /* MainViewController.swift */; };
 		6BD87CD7267F02D100414AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BD87CD6267F02D100414AAB /* Assets.xcassets */; };
 		6BD87CDA267F02D100414AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BD87CD8267F02D100414AAB /* LaunchScreen.storyboard */; };
 		97BD92B7DB11DA3C09862ADE /* Pods_Dokemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6391E0D489C0C97C0E70E69 /* Pods_Dokemon.framework */; };
@@ -20,8 +19,7 @@
 		6BD87CCA267F02CB00414AAB /* Dokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD87CCD267F02CB00414AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BD87CCF267F02CB00414AAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6BD87CD1267F02CB00414AAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6BD87CD4267F02CB00414AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BD87CD1267F02CB00414AAB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6BD87CD6267F02D100414AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BD87CD9267F02D100414AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BD87CDB267F02D100414AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,8 +63,7 @@
 			children = (
 				6BD87CCD267F02CB00414AAB /* AppDelegate.swift */,
 				6BD87CCF267F02CB00414AAB /* SceneDelegate.swift */,
-				6BD87CD1267F02CB00414AAB /* ViewController.swift */,
-				6BD87CD3267F02CB00414AAB /* Main.storyboard */,
+				6BD87CD1267F02CB00414AAB /* MainViewController.swift */,
 				6BD87CD6267F02D100414AAB /* Assets.xcassets */,
 				6BD87CD8267F02D100414AAB /* LaunchScreen.storyboard */,
 				6BD87CDB267F02D100414AAB /* Info.plist */,
@@ -88,7 +85,6 @@
 				FCB9FD27F1D050557FC71D71 /* Pods-Dokemon.debug.xcconfig */,
 				CA75C372A9E56F59688A1A62 /* Pods-Dokemon.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,7 +149,6 @@
 			files = (
 				6BD87CDA267F02D100414AAB /* LaunchScreen.storyboard in Resources */,
 				6BD87CD7267F02D100414AAB /* Assets.xcassets in Resources */,
-				6BD87CD5267F02CB00414AAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BD87CD2267F02CB00414AAB /* ViewController.swift in Sources */,
+				6BD87CD2267F02CB00414AAB /* MainViewController.swift in Sources */,
 				6BD87CCE267F02CB00414AAB /* AppDelegate.swift in Sources */,
 				6BD87CD0267F02CB00414AAB /* SceneDelegate.swift in Sources */,
 			);
@@ -215,14 +210,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6BD87CD3267F02CB00414AAB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6BD87CD4267F02CB00414AAB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6BD87CD8267F02D100414AAB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
