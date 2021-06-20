@@ -13,6 +13,7 @@
 		6BD87CD5267F02CB00414AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BD87CD3267F02CB00414AAB /* Main.storyboard */; };
 		6BD87CD7267F02D100414AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BD87CD6267F02D100414AAB /* Assets.xcassets */; };
 		6BD87CDA267F02D100414AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BD87CD8267F02D100414AAB /* LaunchScreen.storyboard */; };
+		97BD92B7DB11DA3C09862ADE /* Pods_Dokemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6391E0D489C0C97C0E70E69 /* Pods_Dokemon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		6BD87CD6267F02D100414AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BD87CD9267F02D100414AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BD87CDB267F02D100414AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA75C372A9E56F59688A1A62 /* Pods-Dokemon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dokemon.release.xcconfig"; path = "Target Support Files/Pods-Dokemon/Pods-Dokemon.release.xcconfig"; sourceTree = "<group>"; };
+		E6391E0D489C0C97C0E70E69 /* Pods_Dokemon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dokemon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB9FD27F1D050557FC71D71 /* Pods-Dokemon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dokemon.debug.xcconfig"; path = "Target Support Files/Pods-Dokemon/Pods-Dokemon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97BD92B7DB11DA3C09862ADE /* Pods_Dokemon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				6BD87CCC267F02CB00414AAB /* Dokemon */,
 				6BD87CCB267F02CB00414AAB /* Products */,
+				CE990A0F9B20C40781D2B488 /* Pods */,
+				B9322C88BF39329F7EE298E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = Dokemon;
 			sourceTree = "<group>";
 		};
+		B9322C88BF39329F7EE298E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6391E0D489C0C97C0E70E69 /* Pods_Dokemon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE990A0F9B20C40781D2B488 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCB9FD27F1D050557FC71D71 /* Pods-Dokemon.debug.xcconfig */,
+				CA75C372A9E56F59688A1A62 /* Pods-Dokemon.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BD87CDE267F02D100414AAB /* Build configuration list for PBXNativeTarget "Dokemon" */;
 			buildPhases = (
+				CBD9EB92641D7CFE54BC85EF /* [CP] Check Pods Manifest.lock */,
 				6BD87CC6267F02CB00414AAB /* Sources */,
 				6BD87CC7267F02CB00414AAB /* Frameworks */,
 				6BD87CC8267F02CB00414AAB /* Resources */,
+				5F632E856D871E3A6E154185 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F632E856D871E3A6E154185 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dokemon/Pods-Dokemon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dokemon/Pods-Dokemon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dokemon/Pods-Dokemon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD9EB92641D7CFE54BC85EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dokemon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BD87CC6267F02CB00414AAB /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		6BD87CDF267F02D100414AAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCB9FD27F1D050557FC71D71 /* Pods-Dokemon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		6BD87CE0267F02D100414AAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA75C372A9E56F59688A1A62 /* Pods-Dokemon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
