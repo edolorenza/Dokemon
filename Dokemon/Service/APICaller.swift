@@ -26,7 +26,7 @@ final class APICaller {
             baseRequest in
             print(baseRequest)
             let task = URLSession.shared.dataTask(with: baseRequest) { data, _, error in
-                guard let data = data, error == nil else{
+                guard let data = data?.parseData(removeString: "null,"), error == nil else{
                     completion(.failure(APIError.failedToGetData))
                     return
                 }
@@ -51,7 +51,6 @@ final class APICaller {
     }
     
     private func createRequest(with url: URL?, type: HTTPMethod, completion: @escaping (URLRequest) -> Void){
-   
             guard let apiURL = url else {
                 return
             }
@@ -61,3 +60,12 @@ final class APICaller {
             completion(request)
         }
     }
+
+extension Data {
+    func parseData(removeString string: String) -> Data? {
+        let dataAsString = String(data: self, encoding: .utf8)
+        let parsedDataString = dataAsString?.replacingOccurrences(of: string, with: "")
+        guard let data = parsedDataString?.data(using: .utf8) else { return nil }
+        return data
+    }
+}

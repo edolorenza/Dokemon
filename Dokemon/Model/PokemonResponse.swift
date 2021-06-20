@@ -27,5 +27,5 @@ struct EvolutionChain: Codable {
     let name: String
 }
 
-typealias pokemon = [PokemonResponse?]
+typealias pokemon = [PokemonResponse]
 

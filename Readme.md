@@ -1,7 +1,7 @@
 # Do-kemon
 
 ## Objective
-- [ ] Show pokemon list
+- [x] Show pokemon list
 - [ ] show detail of pokemon  
 - [ ] fetch api using asyn/await
 
