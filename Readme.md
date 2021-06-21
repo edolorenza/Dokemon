@@ -2,7 +2,7 @@
 
 ## Objective
 - [x] Show pokemon list
-- [ ] show detail of pokemon  
+- [x] show detail of pokemon  
 - [ ] fetch api using asyn/await
 
 ## Third party list
