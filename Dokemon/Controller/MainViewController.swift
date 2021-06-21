@@ -47,6 +47,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         title = "Dokemon"
         view.backgroundColor = .systemBackground
         setupCollectionView()
@@ -92,6 +95,10 @@ class MainViewController: UIViewController {
 //MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pokemon = pokemon[indexPath.row]
+        let vc = DetailPokemonViewController()
+        vc.viewModel = PokemonViewModel(pokemon: pokemon)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -95,11 +95,23 @@ extension UIView {
                bottom: view.bottomAnchor, right: view.rightAnchor)
     }
     
-    func dropShadow() {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0.25)
-        layer.shadowRadius = 0.50
-        layer.shadowOpacity = 0.25
+    func dropShadow(color: UIColor) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOffset = CGSize(width: 0.50, height: 0.75)
+        layer.shadowRadius = 5.0
+        layer.shadowOpacity = 0.50
         layer.masksToBounds = false
     }
+
 }
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
+

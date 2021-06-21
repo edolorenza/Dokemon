@@ -64,7 +64,6 @@ class MainCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.dropShadow()
     }
     
     //MARK: - Helpers
