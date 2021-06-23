@@ -47,6 +47,7 @@ class MainCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        isSkeletonable = true
         contentView.layer.cornerRadius = 8
         contentView.layer.masksToBounds = true
         setupView()
@@ -56,11 +57,6 @@ class MainCollectionViewCell: UICollectionViewCell {
         fatalError()
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        nameLabel.text = nil
-        imageView.image = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(pointSize: 50, weight: .regular))
-    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -68,6 +64,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Helpers
     private func setupView(){
+        
         contentView.addSubview(nameLabel)
         contentView.addSubview(imageView)
         contentView.addSubview(overlayView)

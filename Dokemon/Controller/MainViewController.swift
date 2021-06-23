@@ -6,11 +6,21 @@
 //
 
 import UIKit
+import SkeletonView
 
 class MainViewController: UIViewController {
     
     //MARK: -Properties
     private var pokemon = [PokemonResponse]()
+    private var activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.style = .large
+        ai.backgroundColor = .darkGray
+        ai.color = .white
+        ai.layer.cornerRadius = 4
+        ai.isUserInteractionEnabled = false
+        return ai
+    }()
     
     private let collectionView: UICollectionView = UICollectionView(
         frame: .zero,
@@ -46,15 +56,29 @@ class MainViewController: UIViewController {
     //MARK: -lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         title = "Dokemon"
+       
         view.backgroundColor = .systemBackground
         setupCollectionView()
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.setDimensions(height: 60, width: 60)
+        activityIndicator.center(inView: view.self)
+        
+        activityIndicator.startAnimating()
+        collectionView.isSkeletonable = true
+        collectionView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0))
         fetchData()
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,12 +90,13 @@ class MainViewController: UIViewController {
     //MARK: - API
     private func fetchData(){
         APICaller.shared.getPokemonList {[weak self] result in
-          
             DispatchQueue.main.async {
                 switch result {
                 case .success(let dokemon):
                     self?.pokemon = dokemon
                     self?.collectionView.reloadData()
+                    self?.activityIndicator.stopAnimating()
+                    self?.collectionView.hideSkeleton()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -103,7 +128,15 @@ extension MainViewController: UICollectionViewDelegate {
 }
 
 //MARK: - UICollectionViewDataSource
-extension MainViewController: UICollectionViewDataSource {
+extension MainViewController:  SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return MainCollectionViewCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

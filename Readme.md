@@ -7,6 +7,7 @@
 
 ## Third party list
 [SDWebImageView](https://cocoapods.org/pods/SDWebImage)<br>
+[SkeletonView](https://cocoapods.org/pods/SkeletonView)<br>
 
 ## Screenshot
 ![screenshoot](ss.png)
